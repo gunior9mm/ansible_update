@@ -1,0 +1,11 @@
+---
+- name: Update SO hosts.
+  hosts: all
+  become: true
+  tasks:
+    - name: ensure system updated
+      ansible.builtin.yum:
+        name: "*"
+        state: latest
+        update_cache: true
+
